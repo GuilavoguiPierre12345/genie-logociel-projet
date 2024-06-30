@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graphiques</title>
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <link rel="stylesheet" href="../../../../bootstrap/css/bootstrap.css">
+    <script src="jquery-3.6.3.min.js"></script>
+</head>
+
+<body class="container mt-4">
+    <div class="row mt-5">
+        <h1 class="h2 text-center mb-5">Statistique du département</h1>
+        <div class="col-sm-6">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="col-sm-6">
+            <canvas id="myChart1"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // la selection du canvas
+        const ctx = document.getElementById('myChart');
+        const ctx1 = document.getElementById('myChart1');
+        Chart.defaults.font.size = 16;
+
+        var data1 = [];
+        var data2 = [0,0];
+
+        var url_b = "http://localhost/glg3/Admin/Controllers/json/";
+        // var url_b = "http://192.168.43.100:8080/glg3/Admin/Controllers/json/";
+        $(document).ready(() => {
+            $.ajax({
+                url: url_b + "statistique.json.php",
+                type: "GET",
+                data: null,
+                success: (resultat) => {
+                    data1[0]=resultat[0].length;
+                    data1[1]=resultat[1].length;
+                    data1[2]= resultat[2].length;
+                    for (let index = 0; index < resultat[2].length; index++) {
+                        if (resultat[2][index].genre==='M') {
+                            data2[0] +=1;
+                        }else 
+                            data2[1] +=1;
+                    }
+                    
+                    new Chart(ctx, {
+                        type: 'radar',
+                        data: {
+                            labels: ['Professeurs', 'matiere', 'Etudiant'],
+                            datasets: [
+                                {
+                                    label: 'Statistique du département',
+                                    data: data1,
+                                    borderColor: [
+                                        '#16caeef4',
+                                        '#77ee16f4',
+                                        'rgb(255, 205, 86)',
+                                    ],
+                                    backgroundColor: [
+                                        '#16caeef4',
+                                        '#77ee16f4',
+                                        'rgba(255, 205, 86, 0.2)',
+                                    ],
+                                    borderWidth: 3,
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                },
+                                x: {
+                                    beginAtZero: true
+                                }
+                            },
+                            customCanvasBackgroundColor: {
+                                color: 'red',
+                            },
+                            animation: {
+                                tension: {
+                                    duration: 2000,
+                                    easing: 'easeInOutBounce',
+                                    from: 2,
+                                    to: -2,
+                                    loop: true
+                                }
+                            },
+                            plugins: {
+                                tooltip: {
+                                    enabled: true
+                                },
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            style: 'italic',
+                                            size: 26,
+                                            family: 'Century'
+                                        }
+                                    },
+                                    display: true
+                                }
+                            },
+                        }
+                    });
+                   
+                    // deuxième bloc
+                    new Chart(ctx1, {
+                        type: 'polarArea',
+                        data: {
+                            labels: ['Garçons', 'Filles'],
+                            datasets: [
+                                {
+                                    label: 'Etudiants',
+                                    data: data2,
+                                    borderColor: [
+                                        'rgb(255, 99, 132)',
+                                        'rgb(255, 159, 64)',
+                                    ],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)',
+                                    ],
+                                    borderWidth: 3,
+                                },
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                },
+                                x: {
+                                    beginAtZero: true
+                                }
+                            },
+                            customCanvasBackgroundColor: {
+                                color: 'red',
+                            },
+                            animation: {
+                                tension: {
+                                    duration: 1000,
+                                    easing: 'linear',
+                                    from: 2,
+                                    to: -1,
+                                    loop: true
+                                }
+                            },
+                            plugins: {
+                                tooltip: {
+                                    enabled: true
+                                },
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            size: 26,
+                                            family: 'Century'
+                                        }
+                                    },
+                                    display: true
+                                }
+                            },
+                        }
+                    });
+                }
+            });
+
+           
+            
+            
+            
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

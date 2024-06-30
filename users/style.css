@@ -1,0 +1,44 @@
+body{
+	margin:0px;
+	padding: 0px;
+	
+}
+.container{
+	margin-right:px;
+	margin-left:px;
+	
+	height: 1000px;
+}
+.block1{
+	margin-right:560px;
+	margin-left:90px;
+	
+	height:3000px;
+
+}
+.block2{
+	margin-right:70px;
+	margin-left:740px;
+	background-color:#c0c0c0;
+	height:1400px;
+	margin-top: -3000px;
+
+}
+.row .h2{ line-height:34px; display:inline-block; border-bottom:#d2d9d8 2px solid; border-top:#d2d9d8 2px solid; text-align:center;
+font-size:36px; line-height:45px; color:#6a4c31; font-weight:normal; font-family: 'Passion One', cursive; }
+
+
+ .card-title {font-size:20px; line-height:18px; color:#6a4c31; font-weight:bold;}
+ .card-text{font-size:12px; line-height:18px; color:#6a4c31 black; font-weight:bold; text-transform:uppercase;}
+
+
+
+.btn  {color:#black; text-transform:uppercase; text-decoration:none; font-size:12px; line-height:18px; font-weight:bold; display:inline-block; }
+.btn :hover {text-decoration:none;}
+
+.container .h2{ line-height:34px; display:inline-block; border-bottom:#d2d9d8 2px solid; border-top:#d2d9d8 2px solid; text-align:center;
+font-size:36px; line-height:45px; color:#6a4c31; font-weight:normal; font-family: 'Passion One', cursive; }
+
+
+
+

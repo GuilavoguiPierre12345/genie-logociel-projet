@@ -1,0 +1,38 @@
+.bg-button{
+    background-color: #6495ed;
+    border: none;
+}
+.list-group-item{
+    font-size: 16px;
+}
+.bottom-title{
+    background-color: #6495ed;
+    
+    color: white;
+}
+.bg-board{
+    
+    font-family: 'Century Gothic';
+    background-color: #6494edbb;
+    color: white;
+}
+.accueil_accordion{
+    background-color: #fff;
+}
+.totalEtudiant,.totalEnseignant{
+    color: #fff;
+}
+
+body{
+   background-image: url('img/bg1.jpg');
+   background-position: center;
+   background-size: contain;
+   background-attachment: fixed;
+}
+.card{
+    background: linear-gradient( to top, rgba(24, 24, 51, 0.192) 5%, rgba(255, 255, 255, 0.04) 50%)
+}
+
+#contenu{
+    resize: none;
+}

@@ -1,0 +1,63 @@
+.home{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.text-color{
+    font-weight: 500;
+}
+.entete-text{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 40px;
+}
+@media screen and(min-width: 992px) {
+    .hauteur{
+        height: 631px !important;
+        object-fit: cover;
+    }
+  }
+
+/* services */
+  .titr {
+    background-color: #0dcaf0;
+    font-weight: bold;
+  }
+  /* fin services */
+
+  /* contact */
+  .textarea{
+    resize: none;
+  }
+/* ################ fin contact ##########""" */
+
+/* la navigation  */
+.cible {
+  outline: 3px solid black;
+  color: #77ee16f4;
+}
+
+
+/*  fin du traitement  */
+.nav-link{
+  width: 200px;
+}
+
+#apprendre-le-code{
+  background-image: url('images/bg3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+#programme{
+  background-color: rgb(0, 0, 0);
+  background-image: url('images/Rectangle.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#programme img,#valeurs img{
+  width: 20%;
+  height: 20%;
+}
